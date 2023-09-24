@@ -18,8 +18,10 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.message);
         // You can handle the response here as needed
+        if (data.message === "Login successful!") {
+            window.location.href = '/dashboard'; // Redirect to the dashboard
+        }
     })
     .catch(error => {
         console.error('Error:', error);
